@@ -12,7 +12,7 @@ public abstract class Pagamento {
         this.status = "PENDENTE";
     }
 
-    // Método concreto: reaproveitado por todas as filhas
+    // Mostra os dados do pagamento
     public void imprimirRecibo() {
         System.out.println("----- RECIBO -----");
         System.out.println("ID da transação: " + idTransacao);
@@ -21,10 +21,10 @@ public abstract class Pagamento {
         System.out.println("------------------");
     }
 
-    // Contrato: cada filha define como processa
+    // Cada tipo de pagamento vai ter sua própria implementação
     public abstract boolean processar();
 
-    // Permite que o Gateway altere o status (os atributos são protected)
+    // Atualiza o status do pagamento
     public void setStatus(String status) {
         this.status = status;
     }
